@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Tap Tec</title>
+</head>
+
+<body>
+    <!-- SECCION I N I C I O -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>TAP TEC</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a href="#nosotros" onclick="seleccionar(this)">NOSOTROS</a></li>
+                            <li><a href="#servicios" onclick="seleccionar(this)">SERVICIOS</a></li>
+                            <li><a href="#skills" onclick="seleccionar(this)">HABILIDADES</a></li>
+                            <li><a href="#proyecto" onclick="seleccionar(this)">PROYECTO</a></li>
+                            <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+
+                    <div class="redes">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos</p>
+                <h2>Somos <span>TAP TEC</span>, Empresa de Tecnologias</h2>
+                <p class="descripcion">Tap Tec es una empresa que desarrolla soluciones a problematicas
+                    que se plantean en las empresas. Si buscas una solucion Eficas y Eficiente somos 
+                    la empresa indicada
+                </p>
+                <a href="#portfolio">Contrato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION S O B R E M I -->
+    <section id="nosotros">
+        <div class="contenedor-foto">
+            <img src="img/Erik.jpeg" alt="">
+            <img src="img/karel.jpeg" alt="">
+            <img src="img/cristian.jpeg" alt="">
+            <img src="img/brandon.jpeg" alt="">
+        </div>
+        <div class="nosotros">
+            <p class="titulo-seccion">Sobre Nosotros</p>
+            <h2>Hola Somos <span>Tap Tec</span> </h2>
+            <h3>Nuestro Equipo</h3>
+            <p>El Director del proyecto  Ing. Eric Leonardo Gómez Granados  
+                será el responsable de liderar y supervisar la planificación, 
+                implementación y seguimiento del proyecto, será el responsable
+                 de entregar el proyecto en el plazo establecido y dentro del 
+                 presupuesto asignado.
+                </p>
+                <p>El Jefe del soporte técnico Ing. Josué Karel Olmos López es el 
+                    responsable de proporcionar y dar soporte al sistema solicitado en 
+                    caso de un error bajo garantía.
+                </p>
+                <p>El Jefe de redes Ing. Christian Jhair Rodriguez Villanueva será el 
+                    responsable de mantener y configurar las redes de comunicación necesarias 
+                    para la creación y la gestión de la base de datos.
+                </p>
+                <p>El Jefe de software Ing. Brandon Axel López de Alba será el  
+                    responsable de liderar el diseño y desarrollo del software necesario para 
+                    la optimización  para la empresa Modelo seleccionando las herramientas y 
+                    tecnologías adecuadas, supervisando las pruebas y validación del software.  
+                </p>
+            <a href="#">Nuestra Politica</a>
+        </div>
+    </section>
+
+    <!-- SECCION S E R V I C I O S -->
+    <section id="servicios">
+        <h3 class="titulo-seccion">NUESTROS SERVICIOS</h3>
+        <div class="fila">
+            <div class="servicio">
+                <span class="icono"> <i class="fa-solid fa-code"></i></span>
+                <h4>Solución de problematicas</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Programación</li>
+                    <li>Sistemas</li>
+                    <li>Ideas</li>
+                </ul>
+                <p>Soluciones Eficientes y Eficaces con un programa de software</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-file-code"></i></span>
+                <h4>Cableado y sistema de Redes</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Cableado</li>
+                    <li>Router</li>
+                    <li>Red</li>
+                </ul>
+                <p>Todas las rede necesarias para tu empresa</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-arrow-trend-up"></i></span>
+                <h4>Mantinimiento de Servidores</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>PY</li>
+                    <li>Redes</li>
+                    <li>JS</li>
+                </ul>
+                <p>Mantenimiento a sus diferentes tipos de servidores</p>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-database"></i></span>
+                <h4>Alojamiento de Sitios</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Web</li>
+                    <li>PY</li>
+                    <li>PHP</li>
+                </ul>
+                <p>Alojar sitios web dependiendo a las necesidades del cliente</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-palette"></i></span>
+                <h4>Desarrollo Web<h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>PHP</li>
+                    <li>PY</li>
+                    <li>JS</li>
+                </ul>
+                <p>Desarrollo de paginas y aplicaciones web para tu empresa. acorde a las neceidades del cliente
+                </p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-person-circle-question"></i></span>
+                <h4>Bases de Datos</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>SQL</li>
+                    <li>NoSQL</li>
+                </ul>
+                <p>Manejo de Bases de Datos: Relacionales y No Renacionales usando: MySQl, Posgrete SQL,
+                     MongoDB y Firebase</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION H A B I L I D A D E S -->
+    <div class="contenedor-skills" id="skills">
+        <h3>HABILIDADES </h3>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Solucion de problematicas</p>
+                <span class="porcentaje">95%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="html"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Desarrollo de Software</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="js"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Cableado y Redes</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="bd"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Planeacion de Proyectos</p>
+                <span class="porcentaje">90%</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="ps"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCION PROYECTO -->
+    <section id="proyecto">
+        <h3 class="titulo-seccion">Proyecto</h3>
+        <div class="fila">
+            <div class="archivo">
+                <div class="overlay"></div>
+                <img src="img/fisica.jpeg" alt="" onclick="mostrarImagen('img/fisica.jpeg')">
+                <div class="info">
+                    <h4>Topologia lógica</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="ventana-emergente" class="oculto">
+      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
+      <img id="imagen-grande">
+    </div>
+    <section id="proyecto">
+        <div class="fila">
+            <div class="archivo">
+                <div class="overlay"></div>
+                <img src="img/contrato.jpeg" alt="" onclick="mostrarImagen('img/contrato.jpeg')">
+                <div class="info">
+                    <h4>Contrato</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="ventana-emergente" class="oculto">
+      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
+      <img id="imagen-grande">
+    </div>
+        
+    <section id="proyecto">
+        <div class="fila">
+            <div class="archivo">
+                <div class="overlay"></div>
+                <img src="img/presupuesto.jpeg" alt="" onclick="mostrarImagen('img/presupuesto.jpeg')">
+                <div class="info">
+                    <h4>Presupuesto</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="ventana-emergente" class="oculto">
+      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
+      <img id="imagen-grande">
+    </div>   
+    <section id="proyecto">
+        <div class="fila">
+            <div class="archivo">
+                <div class="overlay"></div>
+                <img src="img/logica.PNG" alt="" onclick="mostrarImagen('img/logica.PNG')">
+                <div class="info">
+                    <h4>Topologia Fisíca</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="ventana-emergente" class="oculto">
+      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
+      <img id="imagen-grande">
+    </div>   
+           
+    <section id="proyecto">
+        <div class="fila">
+            <div class="archivo">
+                <div class="overlay"></div>
+                <img src="img/presupuesto.jpeg" alt="" onclick="mostrarImagen('img/presupuesto.jpeg')">
+                <div class="info">
+                    <h4>Inventario</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="ventana-emergente" class="oculto">
+      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
+      <img id="imagen-grande">
+    </div>   
+    <section id="proyecto">
+        <div class="fila">
+            <div class="archivo">
+                <div class="overlay"></div>
+                <img src="img/java.jpeg" alt="" onclick="mostrarImagen('mg/java.jpeg')">
+                <div class="info">
+                    <h4> Programa de Software</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="ventana-emergente" class="oculto">
+      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
+      <img id="imagen-grande">
+    </div>   
+    </section>
+
+    <!-- SECCTION C O N T A C T O -->
+    <section id="contacto">
+        <h3 class="titulo-seccion">Contactanos ahora</h3>
+        <div class="contenedor-form">
+            <form action="">
+                <div class="fila mitad">
+                    <input type="text" placeholder="Nombre Completo *" class="input-mitad">
+                    <input type="email" placeholder="Dirección de Email" class="input-mitad">
+                </div>
+                <div class="fila">
+                    <input type="text" placeholder="Tema..." class="input-full">
+                </div>
+                <div class="fila">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"></textarea>
+                </div>
+
+                <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+            </form>
+        </div>
+    </section>
+
+    <!-- SECCION FOOTER -->
+    <footer>
+        <p>Tap Tec Solcuiones Eficaces y Eficientes</p>
+        <div class="redes">
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
