@@ -395,13 +395,23 @@ html {
 /* seccion PROYECTO */
 /* *********************/
 
-#proyecto {
+
+#portfolio {
     max-width: 1100px;
     padding: 100px 0;
     margin: auto;
 }
 
-#proyecto .titulo-seccion {
+
+
+#modal-image {
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+
+#portfolio .titulo-seccion {
     text-align: center;
     font-size: 22px;
     text-transform: uppercase;
@@ -411,13 +421,13 @@ html {
     text-decoration-thickness: 5px;
 }
 
-#proyecto .fila {
+#portfolio .fila {
     display: flex;
     justify-content: space-between;
     margin: 30px 0;
 }
 
-#proyecto .fila .archivo {
+#portfolio .fila .proyecto {
     max-width: 450px;
     border: 1px solid #000;
     margin: 0 10px;
@@ -425,11 +435,7 @@ html {
     overflow: hidden;
 }
 
-.oculto {
-    display: none;
-  } 
-
-#proyecto .fila .archivo img {
+#portfolio .fila .proyecto img {
     width: 100%;
     height: 100%;
     ;
@@ -438,11 +444,11 @@ html {
     transition: .5s;
 }
 
-#proyecto .fila .archivo :hover img {
+#portfolio .fila .proyecto:hover img {
     filter: grayscale(0);
 }
 
-#proyecto .fila .archivo .info {
+#portfolio .fila .proyecto .info {
     position: absolute;
     left: 0px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -454,7 +460,7 @@ html {
     transition: .5s;
 }
 
-#proyecto .fila .archivo:hover .info {
+#portfolio .fila .proyecto:hover .info {
     opacity: 1;
     bottom: 0;
 }

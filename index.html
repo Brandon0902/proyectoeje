@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Tap Tec</title>
 </head>
@@ -213,107 +217,78 @@
     </div>
 
     <!-- SECCION PROYECTO -->
-    <section id="proyecto">
-        <h3 class="titulo-seccion">Proyecto</h3>
+    
+    <section id="portfolio">
+        <h3 class="titulo-seccion">Mis Proyectos</h3>
         <div class="fila">
-            <div class="archivo">
-                <div class="overlay"></div>
-                <img src="img/fisica.jpeg" alt="" onclick="mostrarImagen('img/fisica.jpeg')">
-                <div class="info">
-                    <h4>Topologia lógica</h4>
-                </div>
+          <div class="proyecto">
+            <div class="overlay"></div>
+            <img src="img/brandon.jpeg" alt="" data-modal="img/brandon.jpeg">
+            <div id="modal" class="modal">
+              <img src="img/brandon.jpeg" alt="modal" id="modal-image">
             </div>
+            <div class="info">
+              <h4>Ecomers para ventas</h4>
+              <p>Aplicacion web</p>
+            </div>
+          </div>
+        </div>
+        <div class="fila">
+          <div class="proyecto">
+            <div class="overlay"></div>
+            <img src="img/fisica.jpeg" alt="" data-modal="img/fisica.jpeg">
+            <div id="modal" class="modal">
+              <img src="img/fisica.jpeg" alt="modal" id="modal-image">
+            </div>
+            <div class="info">
+              <h4>Ecomers para ventas</h4>
+              <p>Aplicacion web</p>
+            </div>
+          </div>
+        </div>
+        <div class="fila">
+          <div class="proyecto">
+            <div class="overlay"></div>
+            <img src="img/logica.PNG" alt="" data-modal="img/logica.PNG">
+            <div id="modal" class="modal">
+              <img src="img/logica.PNG" alt="modal" id="modal-image">
+            </div>
+            <div class="info">
+              <h4>Ecomers para ventas</h4>
+              <p>Aplicacion web</p>
+            </div>
+          </div>
+        </div>
+        <div class="fila">
+          <div class="proyecto">
+            <div class="overlay"></div>
+            <img src="img/java.jpeg" alt="" data-modal="img/java.jpeg">
+            <div id="modal" class="modal">
+              <img src="img/java.jpeg" alt="modal" id="modal-image">
+            </div>
+            <div class="info">
+              <h4>Ecomers para ventas</h4>
+              <p>Aplicacion web</p>
+            </div>
+          </div>
+        </div>
+        <div class="fila">
+          <div class="proyecto">
+            <div class="overlay"></div>
+            <img src="img/presupuesto.jpeg" alt="" data-modal="img/presupuesto.jpeg">
+            <div id="modal" class="modal">
+              <img src="img/presupuesto.jpeg" alt="modal" id="modal-image">
+            </div>
+            <div class="info">
+              <h4>Ecomers para ventas</h4>
+              <p>Aplicacion web</p>
+            </div>
+          </div>
         </div>
     </section>
-    
-    <div id="ventana-emergente" class="oculto">
-      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
-      <img id="imagen-grande">
-    </div>
-    <section id="proyecto">
-        <div class="fila">
-            <div class="archivo">
-                <div class="overlay"></div>
-                <img src="img/contrato.jpeg" alt="" onclick="mostrarImagen('img/contrato.jpeg')">
-                <div class="info">
-                    <h4>Contrato</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <div id="ventana-emergente" class="oculto">
-      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
-      <img id="imagen-grande">
-    </div>
-        
-    <section id="proyecto">
-        <div class="fila">
-            <div class="archivo">
-                <div class="overlay"></div>
-                <img src="img/presupuesto.jpeg" alt="" onclick="mostrarImagen('img/presupuesto.jpeg')">
-                <div class="info">
-                    <h4>Presupuesto</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <div id="ventana-emergente" class="oculto">
-      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
-      <img id="imagen-grande">
-    </div>   
-    <section id="proyecto">
-        <div class="fila">
-            <div class="archivo">
-                <div class="overlay"></div>
-                <img src="img/logica.PNG" alt="" onclick="mostrarImagen('img/logica.PNG')">
-                <div class="info">
-                    <h4>Topologia Fisíca</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <div id="ventana-emergente" class="oculto">
-      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
-      <img id="imagen-grande">
-    </div>   
-           
-    <section id="proyecto">
-        <div class="fila">
-            <div class="archivo">
-                <div class="overlay"></div>
-                <img src="img/presupuesto.jpeg" alt="" onclick="mostrarImagen('img/presupuesto.jpeg')">
-                <div class="info">
-                    <h4>Inventario</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <div id="ventana-emergente" class="oculto">
-      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
-      <img id="imagen-grande">
-    </div>   
-    <section id="proyecto">
-        <div class="fila">
-            <div class="archivo">
-                <div class="overlay"></div>
-                <img src="img/java.jpeg" alt="" onclick="mostrarImagen('mg/java.jpeg')">
-                <div class="info">
-                    <h4> Programa de Software</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <div id="ventana-emergente" class="oculto">
-      <button onclick="cerrarVentanaEmergente()">Cerrar</button>
-      <img id="imagen-grande">
-    </div>   
-    </section>
-
+    <div id="modal" class="modal">
+        <img src="" alt="" id="modal-image">
+      </div>
     <!-- SECCTION C O N T A C T O -->
     <section id="contacto">
         <h3 class="titulo-seccion">Contactanos ahora</h3>

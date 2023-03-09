@@ -40,15 +40,10 @@ function efectoHabilidades() {
     }
 
 }
-function mostrarImagen(src) {
-    var ventanaEmergente = document.getElementById("ventana-emergente");
-    var imagenGrande = document.getElementById("imagen-grande");
-    imagenGrande.src = src;
-    ventanaEmergente.classList.remove("oculto");
-  }
-  
-  function cerrarVentanaEmergente() {
-    var ventanaEmergente = document.getElementById("ventana-emergente");
-    ventanaEmergente.classList.add("oculto");
-  }
-  
+$(window).on('load', function() {
+    $('img[data-modal]').on('click', function() {
+      var image = $(this).data('modal');
+      $('#modal-image').attr('src', image);
+      $('#modal').modal();
+    });
+  });
