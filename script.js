@@ -5,7 +5,7 @@ function seleccionar(link) {
     opciones[1].className = "nosotros";
     opciones[2].className = "servicios";
     opciones[3].className = "skills";
-    opciones[4].className = "proyecto";
+    opciones[4].className = "portafolio";
     opciones[5].className = "contacto";
     link.className = "seleccionado";
 
