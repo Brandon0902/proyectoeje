@@ -47,3 +47,8 @@ $(window).on('load', function() {
       $('#modal').modal();
     });
   });
+  var imagen = document.querySelector("img/presupuesto.jpeg");
+
+imagen.addEventListener("click", function() {
+  window.location.href = "Presupuesto final.xlsx";
+});
