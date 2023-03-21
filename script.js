@@ -5,7 +5,7 @@ function seleccionar(link) {
     opciones[1].className = "nosotros";
     opciones[2].className = "servicios";
     opciones[3].className = "skills";
-    opciones[4].className = "portfolio";
+    opciones[4].className = "proyecto";
     opciones[5].className = "contacto";
     link.className = "seleccionado";
 
@@ -42,8 +42,15 @@ function efectoHabilidades() {
 }
 $(window).on('load', function() {
     $('img[data-modal]').on('click', function() {
-      var image = $(this).data('modal');
-      $('#modal-image').attr('src', image);
-      $('#modal').modal();
+        var image = $(this).data('modal');
+        var modal = $(this).closest('.proyecto').find('.modal');
+        var modalImage = modal.find('.modal-image');
+        modalImage.attr('src', image);
+        modal.modal();
+        $('.modal-link').on('click', function(event) {
+            event.preventDefault();
+            var target = $(this).data('target');
+            $(target).modal('hide');
+        });
     });
-  });
+});
