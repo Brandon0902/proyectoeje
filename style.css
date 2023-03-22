@@ -154,11 +154,11 @@ html {
 
 #nosotros .contenedor-foto img {
     flex-wrap: wrap;
-    padding: 20px;
+    padding: Opx;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 0px;
     background-color: #f3f3f3;
-    width: 50%;
+    width: 100%;
 }
 
 #nosotros .nosotros {
@@ -407,7 +407,6 @@ html {
 #modal-image {
     width: 100%;
     height: 100%;
-    
   }
   
 
