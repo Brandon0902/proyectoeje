@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class frmlofgin extends javax.swing.JDialog {
     ConexionMySQL con=new ConexionMySQL();
-    Connection cn=con.conectar();
+    java.sql.Connection cn=con.conectar();
     
     public static  frmregistro fr;
     public frmlofgin(java.awt.Frame parent, boolean modal) {

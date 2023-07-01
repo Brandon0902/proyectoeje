@@ -13,17 +13,14 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class frmregistro extends javax.swing.JDialog {
-    
-    
-    conexion.ConexionMySQL con;
     Connection cn;
+
     public frmregistro(java.awt.Frame parent, boolean modal) throws ClassNotFoundException {
         super(parent, modal);
         initComponents();
-        ConexionMySQL con = new ConexionMySQL();
-        
-        con.conectar();
+        cn = ConexionMySQL.conectar();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -151,24 +148,30 @@ public class frmregistro extends javax.swing.JDialog {
          String clave=txtContraseña.getText();
          String tipoUsuario=comboTipo.getSelectedItem().toString();
          
-         if(nombre.isEmpty()||apellido.isEmpty()||email.isEmpty()||clave.isEmpty()){
-             JOptionPane.showMessageDialog(null, "DEBE COMPLETAR LOS DATOS ");
-         }else{
-             if(tipoUsuario.equalsIgnoreCase("Seleccionar")){
-                 JOptionPane.showMessageDialog(null, "DEBE DE SELECCIONAR UN TIPO DE USUARIO");
-             }else{
-                 try {
-                      String consulta="INSERT INTO usuarios (nombre,apellido,email,clave,tipo_nivel)VALUES('"+nombre+"','"+apellido+"','"+email+"','"+clave+"','"+tipoUsuario+"')";
-                      PreparedStatement ps=cn.prepareStatement(consulta);
-                      ps.executeUpdate(); 
-                      limpar();
-                      JOptionPane.showMessageDialog(null, "DATOS GUARDADOS CORRECTAMENTE");
-                 } catch (Exception e) {
-                     JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR USUARIO"+e);
-                 }
-             }
-             
-         }
+        if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || clave.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "DEBE COMPLETAR LOS DATOS ");
+    } else {
+        if (tipoUsuario.equalsIgnoreCase("Seleccionar")) {
+            JOptionPane.showMessageDialog(null, "DEBE DE SELECCIONAR UN TIPO DE USUARIO");
+        } else {
+            try {
+                String consulta = "INSERT INTO usuarios (nombre,apellido,email,clave,tipo_nivel) VALUES (?, ?, ?, ?, ?)";
+                PreparedStatement ps = cn.prepareStatement(consulta);
+                ps.setString(1, nombre);
+                ps.setString(2, apellido);
+                ps.setString(3, email);
+                ps.setString(4, clave);
+                ps.setString(5, tipoUsuario);
+
+                ps.executeUpdate();
+                
+                JOptionPane.showMessageDialog(null, "DATOS GUARDADOS CORRECTAMENTE");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR USUARIO" + e);
+            }
+        }
+      }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -230,7 +233,5 @@ public class frmregistro extends javax.swing.JDialog {
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
-    private void limpar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }
