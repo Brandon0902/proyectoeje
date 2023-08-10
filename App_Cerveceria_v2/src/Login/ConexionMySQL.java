@@ -13,7 +13,7 @@ public class ConexionMySQL {
     Connection cn = null;
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/login_java_mysql","root","");
+        cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cerveceria","root","");
         if(cn != null){
             JOptionPane.showMessageDialog(null,"CONECTADO");
         }

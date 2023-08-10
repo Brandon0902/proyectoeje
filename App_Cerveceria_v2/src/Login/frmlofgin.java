@@ -2,12 +2,13 @@
 package login;
 
 
-import com.sun.jdi.connect.spi.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
+
 
 
 
@@ -157,7 +158,42 @@ public class frmlofgin extends javax.swing.JDialog {
     }//GEN-LAST:event_txtcontraseñaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String usuario=txtusuario.getText();
+        String contrasena=txtcontraseña.getText();
+        
+        if(!usuario.equals("")||!contrasena.equals("")){
+             try {
+                 PreparedStatement ps=cn.prepareStatement("SELECT tipo_nivel FROM usuarios WHERE email='"+usuario+"' AND clave='"+contrasena+"'");
+                 ResultSet rs=ps.executeQuery();
+                 if(rs.next()){ 
+                   
+                     String tiponivel=rs.getString("tipo_nivel");
+                     if(tiponivel.equalsIgnoreCase("Surtidor")){
+                         dispose();
+                         SurtidorFrame pc=new SurtidorFrame();
+                         pc.setVisible(true); 
+                     }if(tiponivel.equalsIgnoreCase("Cliente")){
+                         dispose();
+                         ClienteFrame pc=new ClienteFrame();
+                         pc.setVisible(true); 
+                     } else if(tiponivel.equalsIgnoreCase("Minorista")){
+                         dispose();
+                          MinoristaFrame pc=new MinoristaFrame();
+                         pc.setVisible(true); 
+                     }
+                 }else{
+            JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTOS");
+ 
+                 }
+             } catch (Exception e) { 
+          JOptionPane.showMessageDialog(null, "ERROR AL INICIAR SESION"+e);
+
+             } 
+        }else{
+         JOptionPane.showMessageDialog(null, "DEBE COMPLETAR LOS CAMPOS");
+
+         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -223,4 +259,4 @@ public class frmlofgin extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
    
-}
+    }

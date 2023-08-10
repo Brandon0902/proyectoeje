@@ -41,6 +41,7 @@ public class frmregistro extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Registro");
 
         jPanel1.setBackground(new java.awt.Color(242, 200, 8));
 
@@ -55,7 +56,7 @@ public class frmregistro extends javax.swing.JDialog {
 
         txtContraseña.setBorder(javax.swing.BorderFactory.createTitledBorder("Contraseña"));
 
-        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Surtidor", "Mayorista", "Cliente" }));
+        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Surtidor", "Minorista", "Cliente" }));
         comboTipo.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo de Usuario"));
         comboTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,18 +146,27 @@ public class frmregistro extends javax.swing.JDialog {
     }//GEN-LAST:event_comboTipoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String nombre=txtNombre.getText();
-         String apellido=txtApellido.getText();
-         String email=txtCorreo.getText();
-         String clave=txtContraseña.getText();
-         String tipoUsuario=comboTipo.getSelectedItem().toString();
-         
-        if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || clave.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "DEBE COMPLETAR LOS DATOS ");
+    String nombre = txtNombre.getText();
+String apellido = txtApellido.getText();
+String email = txtCorreo.getText();
+String clave = txtContraseña.getText();
+String tipoUsuario = comboTipo.getSelectedItem().toString();
+
+if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || clave.isEmpty()) {
+    JOptionPane.showMessageDialog(null, "DEBE COMPLETAR LOS DATOS");
+} else {
+    if (tipoUsuario.equalsIgnoreCase("Seleccionar")) {
+        JOptionPane.showMessageDialog(null, "DEBE DE SELECCIONAR UN TIPO DE USUARIO");
     } else {
-        if (tipoUsuario.equalsIgnoreCase("Seleccionar")) {
-            JOptionPane.showMessageDialog(null, "DEBE DE SELECCIONAR UN TIPO DE USUARIO");
+        if (!email.contains("@")) {
+            JOptionPane.showMessageDialog(null, "EL CORREO ELECTRÓNICO DEBE CONTENER EL SÍMBOLO '@'");
         } else {
+            Registro registro = new Registro();
+            registro.setNombre(nombre);
+            registro.setApellido(apellido);
+            registro.setEmail(email);
+            registro.setClave(clave);
+            registro.setTipoUsuario(tipoUsuario);
             try {
                 String consulta = "INSERT INTO usuarios (nombre,apellido,email,clave,tipo_nivel) VALUES (?, ?, ?, ?, ?)";
                 PreparedStatement ps = cn.prepareStatement(consulta);
@@ -167,13 +177,15 @@ public class frmregistro extends javax.swing.JDialog {
                 ps.setString(5, tipoUsuario);
 
                 ps.executeUpdate();
-                
+
                 JOptionPane.showMessageDialog(null, "DATOS GUARDADOS CORRECTAMENTE");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "NO SE PUDO GUARDAR USUARIO" + e);
             }
         }
-      }
+    }
+}
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
