@@ -157,7 +157,7 @@ html {
 
 #nosotros .contenedor-foto {
     flex-wrap: wrap;
-    max-width: 400px;
+    max-width: 200px;
     margin-right: 80px;
     width: 100%;
 }
@@ -165,10 +165,9 @@ html {
 #nosotros .contenedor-foto img {
     flex-wrap: wrap;
     padding: Opx;
-    width: 100%;
     border-radius: 0px;
     background-color: #f3f3f3;
-    width: 100%;
+    width: 200%;
 }
 
 #nosotros .nosotros {
